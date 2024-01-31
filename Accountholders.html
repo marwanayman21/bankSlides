@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>ALL USERS</title>
+</head>
+
+<body>
+ <!-- This is a comment in HTML 
+    <?php
+    include 'partials/_dbconnect.php';
+    $sql = "SELECT * FROM `users`";
+    $result = mysqli_query($conn,$sql);?>
+      -->
+      <div class="nevbar">
+        <div class="logo">
+            <a><h1><span>MF</span> Bank</h1></a>
+        </div>
+        <div class="menu" > 
+            <ul>
+                <li><a  href="index.html">Home</a></li>
+                <li><a  href="add_branch.html">Add Branches</a></li>
+                <li><a  href="Branches.html">View Branches</a></li>
+                <li><a  href="addaccount.html">Add Account</a></li>
+                <li><a  href="Accountholders.html">View Accounts</a></li>
+            </ul> 
+        </div>
+    </div>    
+    <div class="cover"></div>
+    <div id="view-accounts" class="view-accounts-section">   
+        <h1 style="margin-top:4%;letter-spacing: 2px;">ALL  ACCOUNTS</h1>
+        <div class="all_users" style="height: 500px;margin-top:4% auto;">
+            <input onkeyup="searchdatah(this.value)" id="searchbarA" class="searchbar" placeholder="Search by Name" name="Search" required>        
+            <table><thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>ADDRESS</th>
+                    <th>BALANCE</th>
+                    <th>BRANCHENAME</th>
+                    <th>UPDATE</th>
+                    <th>DELETE</th>   
+                </tr></thead>
+            <tbody id="tbodyh">  
+            </tbody> 
+        </table>
+        </div>
+        </div>
+    <script src="script.js"></script>
+    <script src="scripta.js"></script>
+</body>
+
+</html>

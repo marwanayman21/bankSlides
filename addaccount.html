@@ -1,0 +1,87 @@
+<!-- <?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    include 'partials/_dbconnect.php';
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $amount = $_POST['amount'];
+
+    // Check wether this user email exists 
+    $existSql = "SELECT * FROM `users` WHERE email = '$email'";
+    $result = mysqli_query($conn , $existSql);
+    $numExistRow = mysqli_num_rows($result);
+
+    if ($numExistRow > 0) {
+        // if user already exist
+        echo "<script> alert('Email Already Exist !! Please use another Email'); </script>"; 
+    }
+    else {
+        // Inserting new user data
+        $sql = "INSERT INTO `users` (`name`, `email`, `amount`) VALUES ('$name', '$email', '$amount');";
+        $result = mysqli_query($conn,$sql);
+    
+        if ($result) {
+            echo "<script> alert('Congrats!! New User added'); </script>"; 
+        }
+    }
+
+}?>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>ADD USER</title>
+</head>
+
+<body>
+    <div class="nevbar">
+        <div class="logo">
+            <a><h1><span>MF</span> Bank</h1></a>
+        </div>
+        <div class="menu" > 
+            <ul>
+                <li><a  href="index.html">Home</a></li>
+                <li><a  href="add_branch.html">Add Branches</a></li>
+                <li><a  href="Branches.html">View Branches</a></li>
+                <li><a  href="addaccount.html">Add Account</a></li>
+                <li><a  href="Accountholders.html">View Accounts</a></li>
+            </ul> 
+        </div>
+    </div> 
+
+    <div class="cover"></div>
+
+    <div id="add-account" class="add-account-section">
+        <div class="create">
+            <h1>ADD ACCOUNT</h1>
+            <div class="createUser">
+                <div>
+                    <img src="account.png" alt="user image" style="width: 250px;height: 250px;">
+                </div>
+                <div class="userdata">
+                    <!-- Create user Form -->
+                    <form method="POST" id="accountform">
+                        <input id="IDA" type="number" placeholder="ID" name="ID" required>
+                        <input id="NameA" type="text" placeholder="Name" name="Name" required>
+                        <input id="Address" type="text" placeholder="Address" name="Address" required>
+                        <input id="Balance" type="number" placeholder="Balance" name="Balance" required>
+                        <input id="Branchename" type="text" placeholder="Branchename" name="Branchename" required>
+                        <button id="addA">ADD ACCOUNT</button>
+                    </form>
+                </div>
+            </div>
+        </div>    
+</div>
+
+    <script src="script.js"></script>
+    <script src="scripta.js"></script>
+</body>
+
+</html>
